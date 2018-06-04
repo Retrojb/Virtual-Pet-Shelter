@@ -54,12 +54,19 @@ public class VirtualPetShelter {
 	}
 	
 	public void takeInAPet(VirtualPet pet) {
+		
 		virtualPets.add(pet);
 		
 	}
 	
-	public void adoptAPet (VirtualPet pet) {
-		virtualPets.remove(pet);
+	public VirtualPet adoptOutAPet () {
+		VirtualPet adoptedPet = 
+		virtualPets.stream()
+		.findFirst()
+		.orElse(null);
+		// runs stream adopts first virtual pet, then moves it to adoptedPet, then removes the pet.
+		virtualPets.remove(adoptedPet);
+		return adoptedPet;
 		
 	}
 	
