@@ -93,7 +93,7 @@ public void setDescription(String description) {
 public VirtualPet() {
 	
 }
-public VirtualPet (int hunger, int thirst, int rest, int play, int actionAmount, String petName, String description) {
+public VirtualPet (String petName, String description, int hunger, int thirst, int rest, int play) {
 		
 	super();
 	this.petName = petName;
