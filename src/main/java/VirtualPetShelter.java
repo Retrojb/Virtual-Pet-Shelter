@@ -36,5 +36,21 @@ public class VirtualPetShelter {
 		.forEach(pet -> pet.waterPet());
 	}
 	
+	public void playWithAPet (String petName) {
+		virtualPets.stream()
+		.filter(pet -> pet.getPetName().equals(petName))
+		// if you have 3 pets with the same name it will play with all of them
+		//could add findFirst to play with the first pet. 
+		.forEach(pet -> pet.playWithPet());
+		
+	}
+	
+	public void restWithAPet (String petName) {
+		virtualPets.stream()
+		.filter(pet -> pet.getPetName().equals(petName))
+		.forEach(pet -> pet.restWithPet());
+		// Argument matches the same as play with pet, that if multiple of same pet 
+		//all pets with matching name will rest. could use findFirst.
+	}
 	
 }
