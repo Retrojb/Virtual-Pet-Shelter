@@ -3,6 +3,7 @@ import java.util.Collection;
 
 public class VirtualPetShelter {
 	
+	
 	private Collection<VirtualPet> virtualPets = new ArrayList<VirtualPet>();
 
 	public Collection<VirtualPet> getVirtualPets() {
@@ -68,6 +69,16 @@ public class VirtualPetShelter {
 		virtualPets.remove(adoptedPet);
 		return adoptedPet;
 		
+	}
+	
+	public void gameTick() {
+		virtualPets.stream()
+		.forEach(pet -> { 
+			pet.feedPetTick();
+			pet.waterPetTick();
+			pet.playPetTick();
+			pet.restPetTick();
+		});
 	}
 	
 }

@@ -5,7 +5,8 @@ public class VirtualPet {
 	private int thirst = 50;
 	private int rest = 50;
 	private int play = 50;
-	private int actionAmount = 50;
+	private int actionAmount = 10;
+	private int tickActionAmount = 5;
 	private String petName;
 	private String description;
 	
@@ -20,6 +21,9 @@ public int feedPet () {
 	hunger += actionAmount;
 	return hunger;
 }
+public void feedPetTick() {
+	hunger -= tickActionAmount;
+}
 
 
 public int getThirst() {
@@ -31,6 +35,9 @@ public void setThirst(int thirst) {
 public int waterPet () {
 	thirst += actionAmount;
 	return thirst;
+}
+public void waterPetTick() {
+	thirst -= tickActionAmount;
 }
 
 
@@ -44,6 +51,9 @@ public int restWithPet() {
 	rest += actionAmount;
 	return rest;
 }
+public void restPetTick() {
+	rest -= tickActionAmount;
+}
 
 
 public int getPlay() {
@@ -55,6 +65,9 @@ public void setPlay(int play) {
 public int playWithPet() {
 	play += actionAmount;
 	return play;
+}
+public void playPetTick () {
+	rest -= tickActionAmount;
 }
 
 
