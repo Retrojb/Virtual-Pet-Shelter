@@ -26,5 +26,15 @@ public class VirtualPetShelter {
 		//this loops through the whole list hold the loop, so this iterates over the list.
 	}
 	
+	public void feedAllPets() {
+		virtualPets.stream()
+		.forEach(pet -> pet.feedPet());
+		
+	}
+	public void waterAllPets() {
+		virtualPets.stream()
+		.forEach(pet -> pet.waterPet());
+	}
+	
 	
 }
