@@ -53,4 +53,14 @@ public class VirtualPetShelter {
 		//all pets with matching name will rest. could use findFirst.
 	}
 	
+	public void takeInAPet(VirtualPet pet) {
+		virtualPets.add(pet);
+		
+	}
+	
+	public void adoptAPet (VirtualPet pet) {
+		virtualPets.remove(pet);
+		
+	}
+	
 }
