@@ -24,8 +24,8 @@ public class VirtualPetApp {
 			} else if (actionChoice.equals("3")) {
 				pets.playWithAPet(" ");
 				System.out.println("Which animal do you want to plays with?");
-				String commandOne = input2.nextLine();
-				if (commandOne.equals(pets.getVirtualPets())) {
+				String petChoice = input2.nextLine();
+				if (petChoice.equals(pets.getVirtualPets())) {
 					System.out.println("You have played with " + pets.getVirtualPets() + "play level is at ");
 				}
 			//REST WITH ANIMALS
@@ -63,7 +63,7 @@ public class VirtualPetApp {
 			}
 
 		}
-
+		input2.close();
 	}
 
 	public static void main(String[] args) {

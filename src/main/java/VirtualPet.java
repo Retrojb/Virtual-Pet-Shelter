@@ -21,8 +21,9 @@ public int feedPet () {
 	hunger += actionAmount;
 	return hunger;
 }
-public void feedPetTick() {
+public int feedPetTick() {
 	hunger -= tickActionAmount;
+	return hunger;
 }
 
 
@@ -36,8 +37,9 @@ public int waterPet () {
 	thirst += actionAmount;
 	return thirst;
 }
-public void waterPetTick() {
+public int waterPetTick() {
 	thirst -= tickActionAmount;
+	return thirst;
 }
 
 
@@ -51,8 +53,9 @@ public int restWithPet() {
 	rest += actionAmount;
 	return rest;
 }
-public void restPetTick() {
+public int restPetTick() {
 	rest -= tickActionAmount;
+	return rest;
 }
 
 
@@ -66,8 +69,9 @@ public int playWithPet() {
 	play += actionAmount;
 	return play;
 }
-public void playPetTick () {
-	rest -= tickActionAmount;
+public int playPetTick () {
+	play -= tickActionAmount;
+	return play;
 }
 
 
