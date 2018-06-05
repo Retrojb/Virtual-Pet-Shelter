@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class VirtualPetApp {
 
+
 	private static void gameLoop(VirtualPet animals, VirtualPetShelter pets, String actionChoice) {
 		Scanner input2 = new Scanner(System.in);
 		if (animals.getHunger() >= 0 || animals.getThirst() >= 0) {
@@ -13,6 +14,7 @@ public class VirtualPetApp {
 				pets.getVirtualPets().forEach(pet -> {
 					System.out.println(pet.getPetName() + " hunger is " + pet.getHunger());
 				});
+				System.out.println(" ");
 			//WATERING
 			} else if (actionChoice.equals("2")) {
 				pets.waterAllPets();
@@ -20,6 +22,7 @@ public class VirtualPetApp {
 				pets.getVirtualPets().forEach(pet -> {
 					System.out.println(pet.getPetName() + " thirst is " + pet.getThirst());
 				});
+				System.out.println(" ");
 			//PLAY WITH ANIMALS
 			} else if (actionChoice.equals("3")) {
 				pets.playWithAPet(" ");
@@ -28,11 +31,14 @@ public class VirtualPetApp {
 				if (petChoice.equals(pets.getVirtualPets())) {
 					System.out.println("You have played with " + pets.getVirtualPets() + "play level is at ");
 				}
+				
 			//REST WITH ANIMALS
 			} else if (actionChoice.equals("4")) {
+				
 				System.out.println("Which animal do you want to rest with");
 				System.out.println("Please enter the pets name");
 				String petChoice2 = input2.nextLine();
+				pets.restWithAPet(petChoice2);
 				if (petChoice2.equals(pets.getVirtualPets())) {
 					System.out.println("you played with " + petChoice2);
 				}
@@ -55,16 +61,18 @@ public class VirtualPetApp {
 				pets.getVirtualPets().forEach(pet -> {
 					System.out.println(pet.getPetName());
 				});
+			}
 			} else if (actionChoice.equals("7")) {
 				System.out.println("You have ended the game!");
 				System.exit(0);
-			} else {
-				System.out.println("You have killed all the animals");
+			}
+			else {
+				System.out.println("one of your animals has died");
 			}
 
+		
 		}
-		input2.close();
-	}
+	
 
 	public static void main(String[] args) {
 
@@ -74,9 +82,10 @@ public class VirtualPetApp {
 
 		System.out.println("Welcome to Uncle Charles's Animal Shelter\nthe finest animal shelter in the Netherlands");
 		System.out.println(" ");
-		pets.takeInAPet(new VirtualPet("Black Philip", "Mouse", 50, 80, 30, 50));
+		pets.takeInAPet(new VirtualPet("Philip", "Mouse", 50, 80, 30, 50));
 		pets.takeInAPet(new VirtualPet("Leafy Beef", "Snake", 70, 60, 40, 60));
 		pets.takeInAPet(new VirtualPet("Bellywiggles", "Cat", 40, 30, 40, 30));
+		pets.takeInAPet(new VirtualPet("Maulik", "Cat", 90, 30, 40, 30));
 
 		pets.getVirtualPets().forEach(pet -> {
 			System.out.println("Name \t| Hunger \t| Thirst \t| Play level \t| Rest Level \t|");
@@ -100,8 +109,9 @@ public class VirtualPetApp {
 
 			String actionChoice = input.nextLine();
 			gameLoop(animals, pets, actionChoice);
+			
 		}
-		System.out.println("Game Over, you have killed your animals");
+		System.out.println("Game Over, one of your animals");
 		input.close();
 	}
 }
