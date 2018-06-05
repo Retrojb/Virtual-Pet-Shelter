@@ -36,7 +36,8 @@ public class VirtualPetShelter {
 	}
 
 	public void playWithAPet(String petName) {
-		virtualPets.stream().filter(pet -> pet.getPetName().equals(petName))
+		virtualPets.stream().filter(pet -> 
+			pet.getPetName().equals(petName))
 				// if you have 3 pets with the same name it will play with all of them
 				// could add findFirst to play with the first pet.
 				.forEach(pet -> pet.playWithPet());
